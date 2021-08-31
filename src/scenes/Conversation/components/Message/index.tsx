@@ -8,7 +8,7 @@ import {
   MessageType,
   TextMessage,
 } from '../../../../assets/types';
-import { dateToMessageTime } from '../../../../services/date';
+import { dateToMessageTime } from '../../../../assets/date';
 import s from './index.module.css';
 
 const FormatMessage = (text: string) => {
