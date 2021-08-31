@@ -1,0 +1,84 @@
+
+
+.root {
+  box-shadow: none;
+  font-size: unset;
+  text-align: unset;
+  border: unset;
+  outline: unset;
+  padding: unset;
+  margin: unset;
+  background: unset;
+  font-weight: unset;
+  color: unset;
+  user-select: text;
+}
+
+.text {
+  padding: 12px;
+}
+
+.textmine {
+  background-color: var(--MESSAGE_BACKGROUND_SELF);
+}
+
+.textnotmine {
+  background-color: var(--MESSAGE_BACKGROUND_REPLY);
+}
+
+.image {
+  display: flex;
+  flex-direction: column;
+}
+
+.image > img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.image > span {
+  display: block;
+  padding: 12px;
+}
+
+.tag {
+  color: var(--MESSAGE_TAG);
+  font-weight: bold;
+}
+
+.name {
+  color: black;
+  max-height: 0px;
+  overflow: hidden;
+}
+
+.date {
+  color: var(--MESSAGE_DATE);
+  max-height: 0px;
+}
+
+.open {
+  max-height: 100px;
+}
+
+.class {
+  overflow: hidden;
+}
+
+.mine {
+  border-start-start-radius: var(--RADIUS);
+  border-end-start-radius: var(--RADIUS);
+}
+
+.notmine {
+  border-start-end-radius: var(--RADIUS);
+  border-end-end-radius: var(--RADIUS);
+}
+
+.mine.bot {
+  border-end-end-radius: var(--RADIUS);
+}
+
+.notmine.bot {
+  border-end-start-radius: var(--RADIUS);
+}

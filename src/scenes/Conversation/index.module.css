@@ -1,0 +1,60 @@
+
+
+.root {
+  --INPUT: 45px;
+}
+
+.messages {
+  width: 100%;
+  padding-bottom: var(--INPUT);
+}
+
+.message {
+  max-width: 80vw;
+  width: max-content;
+  overflow: hidden;
+  word-break: break-all;
+  white-space: normal;
+}
+
+.standalone {
+  margin-bottom: 12px;
+}
+
+.mine {
+  margin-left: auto;
+  text-align: right;
+}
+
+.bot {
+  margin-bottom: 16px;
+}
+
+.typing {
+  background-color: var(--TOOLBAR_BACKGROUND);
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  display: flex;
+  flex-direction: row;
+  padding: 16px;
+  height: var(--INPUT);
+}
+
+.file {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.typing > :not(:last-child) {
+  margin-right: 6px;
+}
+
+.typing > input {
+  font-size: 1em;
+  flex-grow: 1;
+  padding: 0px 12px;
+  outline: unset;
+}
