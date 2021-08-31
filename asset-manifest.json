@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/kraaft/static/css/main.75099fde.chunk.css",
+    "main.js": "/kraaft/static/js/main.fe5b19f3.chunk.js",
+    "main.js.map": "/kraaft/static/js/main.fe5b19f3.chunk.js.map",
+    "runtime-main.js": "/kraaft/static/js/runtime-main.9636c54f.js",
+    "runtime-main.js.map": "/kraaft/static/js/runtime-main.9636c54f.js.map",
+    "static/js/2.2274c638.chunk.js": "/kraaft/static/js/2.2274c638.chunk.js",
+    "static/js/2.2274c638.chunk.js.map": "/kraaft/static/js/2.2274c638.chunk.js.map",
+    "static/js/3.e227671e.chunk.js": "/kraaft/static/js/3.e227671e.chunk.js",
+    "static/js/3.e227671e.chunk.js.map": "/kraaft/static/js/3.e227671e.chunk.js.map",
+    "index.html": "/kraaft/index.html",
+    "static/css/main.75099fde.chunk.css.map": "/kraaft/static/css/main.75099fde.chunk.css.map",
+    "static/js/2.2274c638.chunk.js.LICENSE.txt": "/kraaft/static/js/2.2274c638.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9636c54f.js",
+    "static/js/2.2274c638.chunk.js",
+    "static/css/main.75099fde.chunk.css",
+    "static/js/main.fe5b19f3.chunk.js"
+  ]
+}
