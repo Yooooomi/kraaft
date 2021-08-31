@@ -1,0 +1,36 @@
+module.exports = {
+  root: true,
+  plugins: ['@typescript-eslint', 'react-hooks', 'prettier'],
+  extends: [
+    'airbnb-typescript',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
+    'prettier/@typescript-eslint',
+    'prettier/react',
+  ],
+  env: {
+    node: true,
+    browser: true,
+    jest: true,
+  },
+  parserOptions: {
+    project: './tsconfig.json',
+    tsconfigRootDir: __dirname,
+  },
+  ignorePatterns: ['.eslintrc.js'],
+  rules: {
+    'prettier/prettier': ['error'],
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-use-before-define': 'off',
+    'import/prefer-default-export': 'off',
+    'react/prop-types': 'off',
+    'react/jsx-uses-react': 'off',
+    'react/require-default-props': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'react-hooks/exhaustive-deps': 'error',
+    'func-names': 'off',
+    'default-case': 'off',
+    'consistent-return': 'off',
+    'no-restricted-syntax': 'off',
+  },
+};
