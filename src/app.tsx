@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import './app.css';
 
 import { store } from './assets/store';
@@ -10,9 +10,14 @@ const App = () => {
   const { messages: storeMessages } = store;
   const [messages, setMessages] = useState(storeMessages);
 
+  const sorted = useMemo(
+    () => messages.sort((a, b) => a.createdAt - b.createdAt),
+    [messages],
+  );
+
   return (
     <Layout>
-      <Conversation messages={messages} onChange={setMessages} />
+      <Conversation messages={sorted} onChange={setMessages} />
     </Layout>
   );
 };
