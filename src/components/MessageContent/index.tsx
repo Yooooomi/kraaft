@@ -16,47 +16,39 @@ interface MessageContentProps {
   };
 }
 
-const FormatMessage = (text: string) => {
-  let usersTagged = store.users
-    .map((us) => {
-      const occurences = [];
-      let index = 0;
-      while (index !== -1) {
-        index = text.indexOf(us.username, index);
-        if (index !== -1) {
-          occurences.push(index);
-          index += 1;
-        }
-      }
-      return { user: us, occurences };
-    })
-    .filter((e) => e.occurences.length > 0);
-  usersTagged = usersTagged
-    .filter((user) => {
-      // eslint-disable-next-line no-param-reassign
-      user.occurences = user.occurences.filter(
-        (oc) => oc !== 0 && text[oc - 1] === '@',
-      );
-      return user.occurences.length > 0;
-    })
-    .flat();
-  const allTags = usersTagged
-    .map((user) => {
-      return user.occurences.map((oc) => ({ occurence: oc, user: user.user }));
-    })
-    .flat()
-    .sort((a, b) => a.occurence - b.occurence);
+function indexesOf(str: string, search: string) {
+  let index = 0;
+  const result = [];
+  while (index !== -1) {
+    index = str.indexOf(search, index);
+    if (index !== -1) {
+      result.push(index);
+      index += 1;
+    }
+  }
+  return result;
+}
+
+function formatContent(content: string) {
+  const ats = indexesOf(content, '@');
+  const sortedUsers = store.users.sort(
+    (a, b) => b.username.length - a.username.length,
+  );
+  const finalString: React.ReactNode[] = [];
   let lastIndex = 0;
-  const elements = [];
-  allTags.forEach((tag) => {
-    const element = text.slice(lastIndex, tag.occurence - 1);
-    elements.push(element);
-    elements.push(<span className={s.tag}>@{tag.user.username}</span>);
-    lastIndex = tag.occurence + tag.user.username.length;
+  ats.forEach((at) => {
+    // Find the first user that matches the string directly after the @
+    const user = sortedUsers.find((us) =>
+      content.slice(at + 1).startsWith(us.username),
+    );
+    if (!user) return;
+    finalString.push(content.slice(lastIndex, at));
+    finalString.push(<span className={s.tag}>@{user.username}</span>);
+    lastIndex = at + user.username.length + 1;
   });
-  elements.push(text.slice(lastIndex, text.length));
-  return elements;
-};
+  finalString.push(content.slice(lastIndex));
+  return finalString;
+}
 
 function MessageContent({
   content,
@@ -64,7 +56,7 @@ function MessageContent({
   className,
   rounded,
 }: MessageContentProps) {
-  const renderedContent = useMemo(() => FormatMessage(content), [content]);
+  const renderedContent = useMemo(() => formatContent(content), [content]);
 
   return (
     <RoundContent

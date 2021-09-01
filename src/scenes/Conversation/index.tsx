@@ -51,15 +51,15 @@ function Conversation({ messages, onChange }: ConversationProps) {
     [messages, onChange, textInput, fileInput],
   );
 
-  // const scrollbot = useCallback(() => {
-  //   window.scrollTo(0, window.document.body.scrollHeight);
-  // }, []);
+  const scrollbot = useCallback(() => {
+    window.scrollTo(0, window.document.body.scrollHeight);
+  }, []);
 
-  // useEffect(() => {
-  //   const unlisten = window.addEventListener('load', scrollbot);
-  //   scrollbot();
-  //   return unlisten;
-  // }, [messages, scrollbot]);
+  useEffect(() => {
+    const unlisten = window.addEventListener('load', scrollbot);
+    scrollbot();
+    return unlisten;
+  }, [messages, scrollbot]);
 
   return (
     <div className={s.root}>
