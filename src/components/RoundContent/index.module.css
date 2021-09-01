@@ -1,0 +1,21 @@
+
+.root {
+  overflow: hidden;
+}
+
+.topleft {
+  border-start-start-radius: var(--RADIUS);
+}
+
+.topright {
+  border-start-end-radius: var(--RADIUS);
+}
+
+.botleft {
+  border-end-start-radius: var(--RADIUS);
+}
+
+.botright {
+  border-end-end-radius: var(--RADIUS);
+}
+

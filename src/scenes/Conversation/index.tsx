@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import cl from 'classnames';
 import { store } from '../../assets/store';
 import { Message as MessageType, Nullable } from '../../assets/types';
-import Message from './components/Message';
+import Message from './components/MessageRenderer';
 import s from './index.module.css';
 
 interface ConversationProps {
@@ -51,9 +51,15 @@ function Conversation({ messages, onChange }: ConversationProps) {
     [messages, onChange, textInput, fileInput],
   );
 
-  useEffect(() => {
-    window.scrollTo(0, window.document.body.scrollHeight);
-  }, [messages]);
+  // const scrollbot = useCallback(() => {
+  //   window.scrollTo(0, window.document.body.scrollHeight);
+  // }, []);
+
+  // useEffect(() => {
+  //   const unlisten = window.addEventListener('load', scrollbot);
+  //   scrollbot();
+  //   return unlisten;
+  // }, [messages, scrollbot]);
 
   return (
     <div className={s.root}>
@@ -65,7 +71,7 @@ function Conversation({ messages, onChange }: ConversationProps) {
           const standalone =
             k === 0 ||
             k === a.length - 1 ||
-            msg.createdAt - a[k + 1].createdAt > NEW_CONVERSATION_THRESHOLD_MS;
+            a[k + 1].createdAt - msg.createdAt > NEW_CONVERSATION_THRESHOLD_MS;
           const mine = store.currentUserId === msg.senderId;
 
           return (
@@ -73,12 +79,14 @@ function Conversation({ messages, onChange }: ConversationProps) {
               key={msg.id}
               className={cl(
                 s.message,
-                mine ? s.mine : s.notmine,
+                mine && s.mine,
                 bot && s.bot,
+                standalone && s.standalone,
               )}>
               <Message
                 message={msg}
-                standalone={standalone}
+                showName={top}
+                showDate={standalone}
                 mine={mine}
                 top={top}
                 bot={bot}

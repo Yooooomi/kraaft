@@ -8,7 +8,7 @@ interface LayoutProps {
 
 function Layout({ children }: LayoutProps) {
   return (
-    <div className={s.root}>
+    <div>
       <Header />
       <section className={s.content}>{children}</section>
     </div>

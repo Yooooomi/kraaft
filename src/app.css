@@ -10,6 +10,10 @@
   --RADIUS: 10px;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .app {
   height: 100%;
   display: flex;

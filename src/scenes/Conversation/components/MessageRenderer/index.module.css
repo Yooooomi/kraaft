@@ -1,0 +1,30 @@
+
+
+.root {
+  box-shadow: none;
+  font-size: unset;
+  text-align: unset;
+  border: unset;
+  outline: unset;
+  padding: unset;
+  margin: unset;
+  background: unset;
+  font-weight: unset;
+  color: unset;
+  user-select: text;
+}
+
+.name {
+  overflow: hidden;
+  max-height: 0px;
+}
+
+.date {
+  overflow: hidden;
+  max-height: 0px;
+}
+
+.open {
+  max-height: 100px;
+}
+

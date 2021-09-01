@@ -15,10 +15,11 @@
   overflow: hidden;
   word-break: break-all;
   white-space: normal;
+  margin-bottom: 4px;
 }
 
 .standalone {
-  margin-bottom: 12px;
+  margin-bottom: 24px;
 }
 
 .mine {
@@ -38,7 +39,7 @@
   right: 0px;
   display: flex;
   flex-direction: row;
-  padding: 16px;
+  padding: 8px;
   height: var(--INPUT);
 }
 

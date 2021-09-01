@@ -40,6 +40,13 @@ export const store: Store = {
         'I think I did hear something about that. I imagine it is an attempt to psych the other team out.',
     },
     {
+      id: 'yTFQY-vpSy',
+      type: 'text',
+      senderId: 'cedric@kraaft.co',
+      createdAt: 1618056839997,
+      content: 'I think',
+    },
+    {
       id: '6ZzP46ndf4',
       type: 'image',
       senderId: 'maxime@kraaft.co',

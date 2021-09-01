@@ -1,9 +1,5 @@
 
 
-.root {
-
-}
-
 .content {
   padding: 16px;
   padding-top: calc(var(--HEADER) + 16px);

@@ -1,0 +1,20 @@
+
+
+.root {
+  padding: 12px;
+  width: fit-content;
+}
+
+.mine {
+  margin-left: auto;
+  background-color: var(--MESSAGE_BACKGROUND_SELF);
+}
+
+.notmine {
+  background-color: var(--MESSAGE_BACKGROUND_REPLY);
+}
+
+.tag {
+  font-weight: bold;
+  color: var(--MESSAGE_TAG);
+}

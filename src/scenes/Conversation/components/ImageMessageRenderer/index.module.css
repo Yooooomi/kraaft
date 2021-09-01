@@ -1,0 +1,17 @@
+
+
+.root {
+  width: 1%;
+  display: table;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.text {
+  width: 100%;
+  word-wrap: break-word;
+  white-space: normal;
+  display: block;
+}
